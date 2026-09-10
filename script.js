@@ -5,7 +5,7 @@ const videoToggle = document.querySelector('#video-toggle');
 let videoWanted = !motion.matches;
 function updateVideoControl() {
   videoToggle.textContent = video.paused ? '▶' : 'Ⅱ';
-  videoToggle.setAttribute('aria-label', video.paused ? 'Play Laser Pup animation' : 'Pause Laser Pup animation');
+  videoToggle.setAttribute('aria-label', video.paused ? 'Play animation' : 'Pause animation');
   videoToggle.setAttribute('aria-pressed', String(!video.paused));
 }
 async function playVideo() { try { await video.play(); } catch { updateVideoControl(); } }
@@ -24,16 +24,6 @@ if ('IntersectionObserver' in window) {
 document.addEventListener('visibilitychange', () => { if (document.hidden) { video.pause(); audio.pause(); } });
 motion.addEventListener('change', () => { if (motion.matches) { videoWanted = false; video.pause(); } });
 
-const madness = document.querySelector('#madness');
-let madnessTimer;
-function stopMadness() { document.body.classList.remove('madness-on'); madness.setAttribute('aria-pressed','false'); }
-madness.addEventListener('click', () => {
-  clearTimeout(madnessTimer);
-  const enabled = madness.getAttribute('aria-pressed') !== 'true';
-  document.body.classList.toggle('madness-on', enabled);
-  madness.setAttribute('aria-pressed', String(enabled));
-  if (enabled) madnessTimer = setTimeout(stopMadness, 10000);
-});
 
 const prompts = [
   'Write a melody using only three notes. Make the silence do the rest.',
@@ -104,7 +94,7 @@ audio.addEventListener('error', () => { syncAudio(); status.textContent = 'This 
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   document.querySelectorAll('.video-stage,.record-art').forEach(surface => {
     surface.addEventListener('pointermove', event => {
-      if (motion.matches || document.body.classList.contains('madness-on')) return;
+      if (motion.matches) return;
       const rect = surface.getBoundingClientRect();
       const x = (event.clientX - rect.left) / rect.width - .5;
       const y = (event.clientY - rect.top) / rect.height - .5;

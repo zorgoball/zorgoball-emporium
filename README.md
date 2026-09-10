@@ -12,7 +12,7 @@ Serve this directory with a static HTTP server (for example, `python -m http.ser
 - App showcases with official App Store screenshots and direct product links.
 - Original practice prompts inspired by the purpose of Ask Euterpe; these are website prompts, not a claim to reproduce the app’s prompt library.
 - Music previews: one audio player, explicit play controls, no autoplay, and playback-error fallbacks.
-- Temporary Madness color switch and subtle pointer-responsive exhibits.
+- Subtle pointer-responsive video and album artwork.
 - Responsive layouts, semantic navigation, keyboard focus, and a skip link.
 
 ## Assets and sources
