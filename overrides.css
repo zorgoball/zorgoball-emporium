@@ -23,6 +23,15 @@
   background: #0b1510;
 }
 
+.music-highlight {
+  max-width: 720px;
+  margin: -12px 0 42px;
+  color: var(--acid);
+  font: 0.78rem 'DM Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 .music-card {
   background: linear-gradient(135deg, #1b2431, #151b18);
 }
