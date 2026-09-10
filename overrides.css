@@ -1,0 +1,11 @@
+/* Real Laser Pup image styling. */
+.avatar-image {
+  width: 55%;
+  height: 55%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 0 35px #b7ff3c88;
+  transform: rotate(-8deg);
+  filter: saturate(1.15) contrast(1.05);
+}
