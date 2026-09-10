@@ -18,3 +18,19 @@
   color: var(--muted);
   line-height: 1.6;
 }
+
+.music-section {
+  background: #0b1510;
+}
+
+.music-card {
+  background: linear-gradient(135deg, #1b2431, #151b18);
+}
+
+.music-card:nth-child(2) {
+  background: linear-gradient(135deg, #2b211d, #171912);
+}
+
+.music-card.card-wide {
+  background: linear-gradient(120deg, #18252a, #21182b);
+}
